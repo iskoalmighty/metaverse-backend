@@ -1,0 +1,570 @@
+{
+	"info": {
+		"_postman_id": "e7c13ff8-698c-4cf8-9c98-ccb143e6e4c3",
+		"name": "METAVERSE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3981273"
+	},
+	"item": [
+		{
+			"name": "ASSISTANT",
+			"item": [
+				{
+					"name": "create-assistant",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var successResponse = 200;\r",
+									"var variableName = 'assistantId';\r",
+									"var responseProperty = 'id';\r",
+									"\r",
+									"console.log(!!pm.environment.name)\r",
+									"\r",
+									"if(pm.response.code == successResponse) {\r",
+									"    var jsonData = JSON.parse(responseBody);\r",
+									"    console.log(\"jsonData.\" + responseProperty  + \": \" + jsonData[responseProperty]);\r",
+									"    if(jsonData) {\r",
+									"        if(pm.environment.name) {\r",
+									"            pm.environment.set(variableName, jsonData[responseProperty]);\r",
+									"        } else {\r",
+									"            pm.collectionVariables.set(variableName, jsonData[responseProperty]);\r",
+									"        }\r",
+									"    }\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/openai/assistant",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"openai",
+								"assistant"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-assistants",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJpc2tvYWxtaWdodHkiLCJpYXQiOjE3MTE4MTUwOTcsImV4cCI6MTcxMTkwMTQ5N30.RDDovW2SxSZwa_mEAOBoBZ23CmpPu5NYtyJFO68QZQf5mMKu7D-ATNH5it3dPjDw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/openai/assistant",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"openai",
+								"assistant"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "THREAD",
+			"item": [
+				{
+					"name": "create-thread",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var successResponse = 200;\r",
+									"var variableName = 'threadId';\r",
+									"var responseProperty = 'id';\r",
+									"\r",
+									"console.log(!!pm.environment.name)\r",
+									"\r",
+									"if(pm.response.code == successResponse) {\r",
+									"    var jsonData = JSON.parse(responseBody);\r",
+									"    console.log(\"jsonData.\" + responseProperty  + \": \" + jsonData[responseProperty]);\r",
+									"    if(jsonData) {\r",
+									"        if(pm.environment.name) {\r",
+									"            pm.environment.set(variableName, jsonData[responseProperty]);\r",
+									"        } else {\r",
+									"            pm.collectionVariables.set(variableName, jsonData[responseProperty]);\r",
+									"        }\r",
+									"    }\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJpc2tvYWxtaWdodHkiLCJpYXQiOjE3MTE4MTUwOTcsImV4cCI6MTcxMTkwMTQ5N30.RDDovW2SxSZwa_mEAOBoBZ23CmpPu5NYtyJFO68QZQf5mMKu7D-ATNH5it3dPjDw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/openai/thread",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"openai",
+								"thread"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-threads",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/openai/thread",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"openai",
+								"thread"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MESSAGE",
+			"item": [
+				{
+					"name": "create-message",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"threadId\": \"{{threadId}}\",\r\n    \"assistantId\": \"{{assistantId}}\",\r\n    \"role\": \"user\",\r\n    \"content\": \"What is the best food in the world?\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/openai/message",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"openai",
+								"message"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-messages",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJpc2tvYWxtaWdodHkiLCJpYXQiOjE3MTE4NTI5MzksImV4cCI6MTcxMTkzOTMzOX0.mRhjsnxjGLBfsxiU-G4xACzzOZJwY5W0wO9YQ2lTnG29BDocv2WEvqd1yUvomAr4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/openai/message",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"openai",
+								"message"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-message",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJpc2tvYWxtaWdodHkiLCJpYXQiOjE3MTE4NTI5MzksImV4cCI6MTcxMTkzOTMzOX0.mRhjsnxjGLBfsxiU-G4xACzzOZJwY5W0wO9YQ2lTnG29BDocv2WEvqd1yUvomAr4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/openai/message/{{threadId}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"openai",
+								"message",
+								"{{threadId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MESSAGE RUN",
+			"item": [
+				{
+					"name": "create-message-run",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var successResponse = 200;\r",
+									"var variableName = 'runId';\r",
+									"var responseProperty = 'id';\r",
+									"\r",
+									"console.log(!!pm.environment.name)\r",
+									"\r",
+									"if(pm.response.code == successResponse) {\r",
+									"    var jsonData = JSON.parse(responseBody);\r",
+									"    console.log(\"jsonData.\" + responseProperty  + \": \" + jsonData[responseProperty]);\r",
+									"    if(jsonData) {\r",
+									"        if(pm.environment.name) {\r",
+									"            pm.environment.set(variableName, jsonData[responseProperty]);\r",
+									"        } else {\r",
+									"            pm.collectionVariables.set(variableName, jsonData[responseProperty]);\r",
+									"        }\r",
+									"    }\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJpc2tvYWxtaWdodHkiLCJpYXQiOjE3MTE4NTI5MzksImV4cCI6MTcxMTkzOTMzOX0.mRhjsnxjGLBfsxiU-G4xACzzOZJwY5W0wO9YQ2lTnG29BDocv2WEvqd1yUvomAr4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"threadId\": \"{{threadId}}\",\r\n    \"assistantId\": \"{{assistantId}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/openai/message-run",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"openai",
+								"message-run"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-message-run-status",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/openai/message-run/{{threadId}}/{{runId}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"openai",
+								"message-run",
+								"{{threadId}}",
+								"{{runId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "LOGIN",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var successResponse = 200;\r",
+							"\r",
+							"console.log(!!pm.environment.name)\r",
+							"\r",
+							"if(pm.response.code == successResponse) {\r",
+							"    var jsonData = JSON.parse(responseBody);\r",
+							"    console.log('jsonData.token: ' + jsonData.token);\r",
+							"    if(jsonData) {\r",
+							"        if(pm.environment.name) {\r",
+							"            pm.environment.set(\"auth_token\", jsonData.token);\r",
+							"        } else {\r",
+							"            pm.collectionVariables.set(\"auth_token\", jsonData.token);\r",
+							"        }\r",
+							"    }\r",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"iskoalmighty\",\r\n    \"password\": \"iskopogi\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "swagger",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJpc2tvYWxtaWdodHkiLCJpYXQiOjE3MTE4NTI5MzksImV4cCI6MTcxMTkzOTMzOX0.mRhjsnxjGLBfsxiU-G4xACzzOZJwY5W0wO9YQ2lTnG29BDocv2WEvqd1yUvomAr4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/swagger-ui.html",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"swagger-ui.html"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{auth_token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "protocol",
+			"value": "http",
+			"type": "string"
+		},
+		{
+			"key": "host",
+			"value": "localhost",
+			"type": "string"
+		},
+		{
+			"key": "port",
+			"value": "8080",
+			"type": "string"
+		},
+		{
+			"key": "api_root",
+			"value": "api",
+			"type": "string"
+		},
+		{
+			"key": "url",
+			"value": "{{protocol}}://{{host}}:{{port}}/{{api_root}}",
+			"type": "string"
+		},
+		{
+			"key": "auth_token",
+			"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJpc2tvYWxtaWdodHkiLCJpYXQiOjE3MTE4OTg0NjgsImV4cCI6MTcxMTk4NDg2OH0.0u8TrMuVwobu25JZ8B2KA5I7WCfTLDgsdI1n3BQWhnCqKqJ7XQYwNowuSEASJwo1",
+			"type": "string"
+		},
+		{
+			"key": "assistantId",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "threadId",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "runId",
+			"value": "",
+			"type": "string"
+		}
+	]
+}

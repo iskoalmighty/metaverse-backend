@@ -1,0 +1,201 @@
+C:\Users\albert.arbowez\.jdks\openjdk-19.0.2\bin\java.exe "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2022.2.3\lib\idea_rt.jar=61657:C:\Program Files\JetBrains\IntelliJ IDEA 2022.2.3\bin" -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 -classpath C:\Users\albert.arbowez\Downloads\2024\01JANUARY\assistant-api-java-main\target\classes;C:\Users\albert.arbowez\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.13.5\jackson-databind-2.13.5.jar;C:\Users\albert.arbowez\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.13.5\jackson-annotations-2.13.5.jar;C:\Users\albert.arbowez\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.13.5\jackson-core-2.13.5.jar it.gdorsi.openaiclient.Main
+POST https://api.openai.com/v1/assistants status 200
+test: asst_JUaL42Jf1fQPDXm0LfSbJCm2
+POST https://api.openai.com/v1/threads status 200
+POST https://api.openai.com/v1/threads/thread_nwx5aHk3RsmchV5Ou96Ogt9D/messages status 200
+POST https://api.openai.com/v1/threads/thread_nwx5aHk3RsmchV5Ou96Ogt9D/runs status 200
+RunResponseDTO[id=run_Pq0da9qpapzeEIIXmTUyzQH6, object=thread.run, createdAt=1711897322, assistantId=asst_JUaL42Jf1fQPDXm0LfSbJCm2, threadId=thread_nwx5aHk3RsmchV5Ou96Ogt9D, status=queued, startedAt=null, expiresAt=1711897922, cancelledAt=null, failedAt=null, completedAt=null, requiredAction=null, lastError=null, model=gpt-3.5-turbo, instructions="You are an expert in geography, be helpful and concise.", tools=[], fileIds=[], metadata={}, temperature=1.0, usage=null]
+GET https://api.openai.com/v1/threads/thread_nwx5aHk3RsmchV5Ou96Ogt9D/runs/run_Pq0da9qpapzeEIIXmTUyzQH6 status 200
+Status of your run is currently RunResponseDTO[id=run_Pq0da9qpapzeEIIXmTUyzQH6, object=thread.run, createdAt=1711897322, assistantId=asst_JUaL42Jf1fQPDXm0LfSbJCm2, threadId=thread_nwx5aHk3RsmchV5Ou96Ogt9D, status=in_progress, startedAt=1711897322, expiresAt=1711897922, cancelledAt=null, failedAt=null, completedAt=null, requiredAction=null, lastError=null, model=gpt-3.5-turbo, instructions="You are an expert in geography, be helpful and concise.", tools=[], fileIds=[], metadata={}, temperature=1.0, usage=null]
+Checking messages to supervise assistant's work
+Threads link for manual verification of requests: https://api.openai.com/v1/threads/thread_nwx5aHk3RsmchV5Ou96Ogt9D/messages
+GET https://api.openai.com/v1/threads/thread_nwx5aHk3RsmchV5Ou96Ogt9D/messages status 200
+MessageResponseDTO[id=msg_Y0u1hbmYxwiuNoZjtXMo9xxb, object=thread.message, createdAt=1711897322, threadId=thread_nwx5aHk3RsmchV5Ou96Ogt9D, role=user, content=[Content[type=text, text=Text[value="What is the capital of Italy?", annotations=[]]]], fileIds=[], assistantId=null, runId=null, metadata={}]
+GET https://api.openai.com/v1/threads/thread_nwx5aHk3RsmchV5Ou96Ogt9D/runs/run_Pq0da9qpapzeEIIXmTUyzQH6 status 200
+Status of your run is currently RunResponseDTO[id=run_Pq0da9qpapzeEIIXmTUyzQH6, object=thread.run, createdAt=1711897322, assistantId=asst_JUaL42Jf1fQPDXm0LfSbJCm2, threadId=thread_nwx5aHk3RsmchV5Ou96Ogt9D, status=in_progress, startedAt=1711897322, expiresAt=1711897922, cancelledAt=null, failedAt=null, completedAt=null, requiredAction=null, lastError=null, model=gpt-3.5-turbo, instructions="You are an expert in geography, be helpful and concise.", tools=[], fileIds=[], metadata={}, temperature=1.0, usage=null]
+Checking messages to supervise assistant's work
+Threads link for manual verification of requests: https://api.openai.com/v1/threads/thread_nwx5aHk3RsmchV5Ou96Ogt9D/messages
+GET https://api.openai.com/v1/threads/thread_nwx5aHk3RsmchV5Ou96Ogt9D/messages status 200
+MessageResponseDTO[id=msg_Y0u1hbmYxwiuNoZjtXMo9xxb, object=thread.message, createdAt=1711897322, threadId=thread_nwx5aHk3RsmchV5Ou96Ogt9D, role=user, content=[Content[type=text, text=Text[value="What is the capital of Italy?", annotations=[]]]], fileIds=[], assistantId=null, runId=null, metadata={}]
+GET https://api.openai.com/v1/threads/thread_nwx5aHk3RsmchV5Ou96Ogt9D/runs/run_Pq0da9qpapzeEIIXmTUyzQH6 status 200
+Checking messages to supervise assistant's work
+Threads link for manual verification of requests: https://api.openai.com/v1/threads/thread_nwx5aHk3RsmchV5Ou96Ogt9D/messages
+Failed to get run state, will retry...com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize value of type `java.lang.String` from Object value (token `JsonToken.START_OBJECT`)
+ at [Source: (String)"{
+  "id": "run_Pq0da9qpapzeEIIXmTUyzQH6",
+  "object": "thread.run",
+  "created_at": 1711897322,
+  "assistant_id": "asst_JUaL42Jf1fQPDXm0LfSbJCm2",
+  "thread_id": "thread_nwx5aHk3RsmchV5Ou96Ogt9D",
+  "status": "failed",
+  "started_at": 1711897322,
+  "expires_at": null,
+  "cancelled_at": null,
+  "failed_at": 1711897327,
+  "completed_at": null,
+  "required_action": null,
+  "last_error": {
+    "code": "rate_limit_exceeded",
+    "message": "You exceeded your current quota, please check your plan and "[truncated 412 chars]; line: 14, column: 17] (through reference chain: it.gdorsi.openaiclient.dto.RunResponseDTO["last_error"])
+com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize value of type `java.lang.String` from Object value (token `JsonToken.START_OBJECT`)
+ at [Source: (String)"{
+  "id": "run_Pq0da9qpapzeEIIXmTUyzQH6",
+  "object": "thread.run",
+  "created_at": 1711897322,
+  "assistant_id": "asst_JUaL42Jf1fQPDXm0LfSbJCm2",
+  "thread_id": "thread_nwx5aHk3RsmchV5Ou96Ogt9D",
+  "status": "failed",
+  "started_at": 1711897322,
+  "expires_at": null,
+  "cancelled_at": null,
+  "failed_at": 1711897327,
+  "completed_at": null,
+  "required_action": null,
+  "last_error": {
+    "code": "rate_limit_exceeded",
+    "message": "You exceeded your current quota, please check your plan and "[truncated 412 chars]; line: 14, column: 17] (through reference chain: it.gdorsi.openaiclient.dto.RunResponseDTO["last_error"])
+	at com.fasterxml.jackson.databind.exc.MismatchedInputException.from(MismatchedInputException.java:59)
+	at com.fasterxml.jackson.databind.DeserializationContext.reportInputMismatch(DeserializationContext.java:1741)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleUnexpectedToken(DeserializationContext.java:1515)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleUnexpectedToken(DeserializationContext.java:1420)
+	at com.fasterxml.jackson.databind.DeserializationContext.extractScalarFromObject(DeserializationContext.java:932)
+	at com.fasterxml.jackson.databind.deser.std.StringDeserializer.deserialize(StringDeserializer.java:62)
+	at com.fasterxml.jackson.databind.deser.std.StringDeserializer.deserialize(StringDeserializer.java:11)
+	at com.fasterxml.jackson.databind.deser.SettableBeanProperty.deserialize(SettableBeanProperty.java:542)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer._deserializeWithErrorWrapping(BeanDeserializer.java:564)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer._deserializeUsingPropertyBased(BeanDeserializer.java:439)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.deserializeFromObjectUsingNonDefault(BeanDeserializerBase.java:1405)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:352)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:185)
+	at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:323)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4674)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3629)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3597)
+	at it.gdorsi.openaiclient.AssistantAIClient.getRunStatus(AssistantAIClient.java:73)
+	at it.gdorsi.openaiclient.Main.isRunDone(Main.java:70)
+	at it.gdorsi.openaiclient.Main.waitUntilRunIsFinished(Main.java:47)
+	at it.gdorsi.openaiclient.Main.main(Main.java:35)
+GET https://api.openai.com/v1/threads/thread_nwx5aHk3RsmchV5Ou96Ogt9D/messages status 200
+MessageResponseDTO[id=msg_Y0u1hbmYxwiuNoZjtXMo9xxb, object=thread.message, createdAt=1711897322, threadId=thread_nwx5aHk3RsmchV5Ou96Ogt9D, role=user, content=[Content[type=text, text=Text[value="What is the capital of Italy?", annotations=[]]]], fileIds=[], assistantId=null, runId=null, metadata={}]
+GET https://api.openai.com/v1/threads/thread_nwx5aHk3RsmchV5Ou96Ogt9D/runs/run_Pq0da9qpapzeEIIXmTUyzQH6 status 200
+Checking messages to supervise assistant's work
+Threads link for manual verification of requests: https://api.openai.com/v1/threads/thread_nwx5aHk3RsmchV5Ou96Ogt9D/messages
+Failed to get run state, will retry...com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize value of type `java.lang.String` from Object value (token `JsonToken.START_OBJECT`)
+ at [Source: (String)"{
+  "id": "run_Pq0da9qpapzeEIIXmTUyzQH6",
+  "object": "thread.run",
+  "created_at": 1711897322,
+  "assistant_id": "asst_JUaL42Jf1fQPDXm0LfSbJCm2",
+  "thread_id": "thread_nwx5aHk3RsmchV5Ou96Ogt9D",
+  "status": "failed",
+  "started_at": 1711897322,
+  "expires_at": null,
+  "cancelled_at": null,
+  "failed_at": 1711897327,
+  "completed_at": null,
+  "required_action": null,
+  "last_error": {
+    "code": "rate_limit_exceeded",
+    "message": "You exceeded your current quota, please check your plan and "[truncated 412 chars]; line: 14, column: 17] (through reference chain: it.gdorsi.openaiclient.dto.RunResponseDTO["last_error"])
+com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize value of type `java.lang.String` from Object value (token `JsonToken.START_OBJECT`)
+ at [Source: (String)"{
+  "id": "run_Pq0da9qpapzeEIIXmTUyzQH6",
+  "object": "thread.run",
+  "created_at": 1711897322,
+  "assistant_id": "asst_JUaL42Jf1fQPDXm0LfSbJCm2",
+  "thread_id": "thread_nwx5aHk3RsmchV5Ou96Ogt9D",
+  "status": "failed",
+  "started_at": 1711897322,
+  "expires_at": null,
+  "cancelled_at": null,
+  "failed_at": 1711897327,
+  "completed_at": null,
+  "required_action": null,
+  "last_error": {
+    "code": "rate_limit_exceeded",
+    "message": "You exceeded your current quota, please check your plan and "[truncated 412 chars]; line: 14, column: 17] (through reference chain: it.gdorsi.openaiclient.dto.RunResponseDTO["last_error"])
+	at com.fasterxml.jackson.databind.exc.MismatchedInputException.from(MismatchedInputException.java:59)
+	at com.fasterxml.jackson.databind.DeserializationContext.reportInputMismatch(DeserializationContext.java:1741)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleUnexpectedToken(DeserializationContext.java:1515)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleUnexpectedToken(DeserializationContext.java:1420)
+	at com.fasterxml.jackson.databind.DeserializationContext.extractScalarFromObject(DeserializationContext.java:932)
+	at com.fasterxml.jackson.databind.deser.std.StringDeserializer.deserialize(StringDeserializer.java:62)
+	at com.fasterxml.jackson.databind.deser.std.StringDeserializer.deserialize(StringDeserializer.java:11)
+	at com.fasterxml.jackson.databind.deser.SettableBeanProperty.deserialize(SettableBeanProperty.java:542)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer._deserializeWithErrorWrapping(BeanDeserializer.java:564)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer._deserializeUsingPropertyBased(BeanDeserializer.java:439)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.deserializeFromObjectUsingNonDefault(BeanDeserializerBase.java:1405)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:352)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:185)
+	at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:323)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4674)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3629)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3597)
+	at it.gdorsi.openaiclient.AssistantAIClient.getRunStatus(AssistantAIClient.java:73)
+	at it.gdorsi.openaiclient.Main.isRunDone(Main.java:70)
+	at it.gdorsi.openaiclient.Main.waitUntilRunIsFinished(Main.java:47)
+	at it.gdorsi.openaiclient.Main.main(Main.java:35)
+GET https://api.openai.com/v1/threads/thread_nwx5aHk3RsmchV5Ou96Ogt9D/messages status 200
+MessageResponseDTO[id=msg_Y0u1hbmYxwiuNoZjtXMo9xxb, object=thread.message, createdAt=1711897322, threadId=thread_nwx5aHk3RsmchV5Ou96Ogt9D, role=user, content=[Content[type=text, text=Text[value="What is the capital of Italy?", annotations=[]]]], fileIds=[], assistantId=null, runId=null, metadata={}]
+GET https://api.openai.com/v1/threads/thread_nwx5aHk3RsmchV5Ou96Ogt9D/runs/run_Pq0da9qpapzeEIIXmTUyzQH6 status 200
+Checking messages to supervise assistant's work
+Threads link for manual verification of requests: https://api.openai.com/v1/threads/thread_nwx5aHk3RsmchV5Ou96Ogt9D/messages
+Failed to get run state, will retry...com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize value of type `java.lang.String` from Object value (token `JsonToken.START_OBJECT`)
+ at [Source: (String)"{
+  "id": "run_Pq0da9qpapzeEIIXmTUyzQH6",
+  "object": "thread.run",
+  "created_at": 1711897322,
+  "assistant_id": "asst_JUaL42Jf1fQPDXm0LfSbJCm2",
+  "thread_id": "thread_nwx5aHk3RsmchV5Ou96Ogt9D",
+  "status": "failed",
+  "started_at": 1711897322,
+  "expires_at": null,
+  "cancelled_at": null,
+  "failed_at": 1711897327,
+  "completed_at": null,
+  "required_action": null,
+  "last_error": {
+    "code": "rate_limit_exceeded",
+    "message": "You exceeded your current quota, please check your plan and "[truncated 412 chars]; line: 14, column: 17] (through reference chain: it.gdorsi.openaiclient.dto.RunResponseDTO["last_error"])
+com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize value of type `java.lang.String` from Object value (token `JsonToken.START_OBJECT`)
+ at [Source: (String)"{
+  "id": "run_Pq0da9qpapzeEIIXmTUyzQH6",
+  "object": "thread.run",
+  "created_at": 1711897322,
+  "assistant_id": "asst_JUaL42Jf1fQPDXm0LfSbJCm2",
+  "thread_id": "thread_nwx5aHk3RsmchV5Ou96Ogt9D",
+  "status": "failed",
+  "started_at": 1711897322,
+  "expires_at": null,
+  "cancelled_at": null,
+  "failed_at": 1711897327,
+  "completed_at": null,
+  "required_action": null,
+  "last_error": {
+    "code": "rate_limit_exceeded",
+    "message": "You exceeded your current quota, please check your plan and "[truncated 412 chars]; line: 14, column: 17] (through reference chain: it.gdorsi.openaiclient.dto.RunResponseDTO["last_error"])
+	at com.fasterxml.jackson.databind.exc.MismatchedInputException.from(MismatchedInputException.java:59)
+	at com.fasterxml.jackson.databind.DeserializationContext.reportInputMismatch(DeserializationContext.java:1741)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleUnexpectedToken(DeserializationContext.java:1515)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleUnexpectedToken(DeserializationContext.java:1420)
+	at com.fasterxml.jackson.databind.DeserializationContext.extractScalarFromObject(DeserializationContext.java:932)
+	at com.fasterxml.jackson.databind.deser.std.StringDeserializer.deserialize(StringDeserializer.java:62)
+	at com.fasterxml.jackson.databind.deser.std.StringDeserializer.deserialize(StringDeserializer.java:11)
+	at com.fasterxml.jackson.databind.deser.SettableBeanProperty.deserialize(SettableBeanProperty.java:542)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer._deserializeWithErrorWrapping(BeanDeserializer.java:564)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer._deserializeUsingPropertyBased(BeanDeserializer.java:439)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.deserializeFromObjectUsingNonDefault(BeanDeserializerBase.java:1405)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:352)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:185)
+	at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:323)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4674)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3629)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3597)
+	at it.gdorsi.openaiclient.AssistantAIClient.getRunStatus(AssistantAIClient.java:73)
+	at it.gdorsi.openaiclient.Main.isRunDone(Main.java:70)
+	at it.gdorsi.openaiclient.Main.waitUntilRunIsFinished(Main.java:47)
+	at it.gdorsi.openaiclient.Main.main(Main.java:35)
+GET https://api.openai.com/v1/threads/thread_nwx5aHk3RsmchV5Ou96Ogt9D/messages status 200
+MessageResponseDTO[id=msg_Y0u1hbmYxwiuNoZjtXMo9xxb, object=thread.message, createdAt=1711897322, threadId=thread_nwx5aHk3RsmchV5Ou96Ogt9D, role=user, content=[Content[type=text, text=Text[value="What is the capital of Italy?", annotations=[]]]], fileIds=[], assistantId=null, runId=null, metadata={}]
+
+Process finished with exit code 130
