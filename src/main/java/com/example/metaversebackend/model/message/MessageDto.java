@@ -72,4 +72,32 @@ public class MessageDto extends BaseDto<Message> {
                 .metadata(this.getMetadata())
                 .build();
     }
+
+    /*
+    {
+      "id": "chatcmpl-9AdQToVJhYXrrosr3vsj9PnYTZZh5",
+      "object": "chat.completion",
+      "created": 1712321861,
+      "model": "gpt-3.5-turbo-0125",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "The Nile River is traditionally considered the longest river in the world, with a total length of around 4,135 miles (6,650 kilometers)."
+          },
+          "logprobs": null,
+          "finish_reason": "stop"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 16,
+        "completion_tokens": 30,
+        "total_tokens": 46
+      },
+      "system_fingerprint": "fp_b28b39ffa8"
+    }
+
+     */
+
 }

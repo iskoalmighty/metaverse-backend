@@ -49,11 +49,9 @@ public class DataExistValidator implements ConstraintValidator<Exist, Object> {
                 entityName,
                 columnName
         );
-        Long count = entityManager.createQuery(sqlQuery, Long.class)
+        return entityManager.createQuery(sqlQuery, Long.class)
                 .setParameter("value", value)
                 .getSingleResult();
-
-        return count;
     }
 
 }

@@ -3,6 +3,7 @@ package com.example.metaversebackend.service;
 import com.example.metaversebackend.config.OpenApiConfig;
 import com.example.metaversebackend.http.request.BaseRequest;
 import com.example.metaversebackend.model.BaseDto;
+import com.example.metaversebackend.utils.ObjectMapperUtil;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
@@ -22,17 +23,10 @@ import java.util.Optional;
 public class OpenAIClientService {
 
     private final OpenApiConfig openApiConfig;
-    private final ObjectMapper objectMapper = new ObjectMapper();
+    private final ObjectMapperUtil objectMapperUtil;
 
     public Optional<String> sendRequest(final String url, final BaseRequest request, final String method) {
-        String json = "";
-        if(request != null) {
-            try {
-                json = objectMapper.writeValueAsString(request);
-            } catch (JsonProcessingException e) {
-                throw new RuntimeException(e);
-            }
-        }
+        String json = objectMapperUtil.objectToString(request);
 
         HttpClient httpClient = HttpClient.newHttpClient();
         HttpRequest.Builder httpRequestBuilder = HttpRequest.newBuilder(URI.create(url))

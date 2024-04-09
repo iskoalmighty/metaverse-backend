@@ -15,6 +15,7 @@ public class OpenApiConfig {
     private String apiKey;
     private String model;
     private String threadsUrl;
+    private String chatUrl;
     private String assistantsUrl;
     private String assistantInstruction;
 }
